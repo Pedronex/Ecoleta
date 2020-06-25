@@ -15,6 +15,7 @@ interface Params {
 interface Data {
   point: {
     image: string;
+    image_url: string;
     name: string;
     email: string;
     whatsapp: string;
@@ -46,14 +47,13 @@ const Detail = () => {
   }
 
   function handleWhatsapp() {
-    Linking.openURL(`whatsapp://send?phone=${data.point.whatsapp}&text=Tenho interesse sobre coleta de resíduos`)
+    Linking.openURL(`whatsapp://send?phone=+55${data.point.whatsapp}&text=Tenho interesse sobre coleta de resíduos`)
   }
 
   function handleComposeMail() {
     MailCompose.composeAsync({
       subject: 'Interesse na coleta de resíduos',
       recipients: [data.point.email],
-      body: 
     });
   }
 
@@ -68,7 +68,7 @@ const Detail = () => {
           <Icon name="arrow-left" size={20} color="#34cb79" />
         </TouchableOpacity>
 
-        <Image style={styles.pointImage} source={{ uri: data.point.image }} />
+        <Image style={styles.pointImage} source={{ uri: data.point.image_url }} />
 
         <Text style={styles.pointName}>{data.point.name}</Text>
         <Text style={styles.pointItems}>

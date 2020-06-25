@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import './styles.css'
 import logo from '../../assets/logo.svg';
 
+// assitir 00:25:41
 const Home = () => {
   return (
     <div id="page-home">
