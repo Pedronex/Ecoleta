@@ -43,7 +43,7 @@ routes.post(
       latitude: Joi.string().required(),
       longitude: Joi.string().required(),
       city: Joi.string().required().max(2),
-      items: Joi.string().regex(/[0-9,]/g).required(),
+      items: Joi.string().required(),
     }),
   }, {
     abortEarly: false
